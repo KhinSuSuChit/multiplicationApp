@@ -1,7 +1,7 @@
 :root{
     --bg-light: yellow;
     --bg-dark: rgba(0,0,0,0.8);
-    --text-light: white;
+    --text-light: green;
     --text-dark: black;
     --btn-light: green;
     --btn-dark:  rgba(0,0,0,0.8);
@@ -17,14 +17,14 @@
 
 [color-scheme = "light"]{
     --bg-color: var(--bg-light);
-    --text-color: var(--text-dark);
+    --text-color: var(--text-light);
     --btn-color: var(--btn-light);
     --border-color: var(--border-light);
 }
 
 [color-scheme = "dark"]{
     --bg-color: var(--bg-dark);
-    --text-color: var(--text-light);
+    --text-color: var(--text-dark);
     --btn-color: var(--btn-dark);
     --border-color: var(--border-dark);
 }
