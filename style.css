@@ -1,0 +1,110 @@
+:root{
+    --bg-light: yellow;
+    --bg-dark: rgba(0,0,0,0.8);
+    --text-light: white;
+    --text-dark: black;
+    --btn-light: green;
+    --btn-dark:  rgba(0,0,0,0.8);
+    --border-light: green;
+    --border-dark: black
+}
+
+*, *::before, *::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+[color-scheme = "light"]{
+    --bg-color: var(--bg-light);
+    --text-color: var(--text-dark);
+    --btn-color: var(--btn-light);
+    --border-color: var(--border-light);
+}
+
+[color-scheme = "dark"]{
+    --bg-color: var(--bg-dark);
+    --text-color: var(--text-light);
+    --btn-color: var(--btn-dark);
+    --border-color: var(--border-dark);
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: var(--bg-color);
+    font-family: cursive;
+}
+
+.container{
+    background-color: white;
+    margin: 10px;
+    padding: 30px;
+    border-radius: 10px;
+    border: solid 5px var(--border-color);
+}
+
+.heading{
+    display: flex;
+    justify-content: space-between;
+}
+
+.toggle-btn{
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.score{
+    font-size: 1.5rem;
+}
+
+form{
+    display:flex;
+    flex-direction: column;
+}
+
+form * {
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.input{
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 2rem;
+    text-align: center;
+    padding: 10px;
+    border: solid 4px var(--btn-color);
+    color: var(--text-color)
+}
+
+input::placeholder{
+    color: lightgray;
+    font-family: cursive;
+}
+
+.btn{
+    background-color: var(--btn-color);
+    color: var(--text-color);
+    border: none;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 1.5rem;
+    font-family: cursive;
+    margin: 20px 0;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    cursor: pointer;
+}
+
+.btn:hover{
+    filter: brightness(0.9);
+}
+
