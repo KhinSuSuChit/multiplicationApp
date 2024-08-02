@@ -57,6 +57,14 @@ formEl.addEventListener("click", ()=>{
     }
 });
 
+formEl.addEventListener("mouseover", (event)=>{
+    const x = event.pageX - formEl.offsetLeft;
+    const y = event.pageY - formEl.offsetTop;
+
+    formEl.style.setProperty("--xPos", x + "px");
+    formEl.style.setProperty("--yPos", y + "px");
+});
+
 function updateLocalStorage(){
-    localStorage.setItem("score",JSON.stringify(score));
+    localStorage.setItem("score", JSON.stringify(score));
 }

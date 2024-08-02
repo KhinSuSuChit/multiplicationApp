@@ -6,7 +6,8 @@
     --btn-light: green;
     --btn-dark:  rgba(0,0,0,0.8);
     --border-light: green;
-    --border-dark: black
+    --border-dark: black;
+    --btn-textcolor: white;
 }
 
 *, *::before, *::after{
@@ -20,6 +21,7 @@
     --text-color: var(--text-light);
     --btn-color: var(--btn-light);
     --border-color: var(--border-light);
+    --btn-hover: var(--btn-hoverlight);
 }
 
 [color-scheme = "dark"]{
@@ -27,6 +29,7 @@
     --text-color: var(--text-dark);
     --btn-color: var(--btn-dark);
     --border-color: var(--border-dark);
+    --btn-hover: var(--btn-hoverdark);
 }
 
 body{
@@ -81,7 +84,7 @@ form * {
     text-align: center;
     padding: 10px;
     border: solid 4px var(--btn-color);
-    color: var(--text-color)
+    color: var(--text-color);
 }
 
 input::placeholder{
@@ -91,7 +94,6 @@ input::placeholder{
 
 .btn{
     background-color: var(--btn-color);
-    color: var(--text-color);
     border: none;
     display: block;
     width: 100%;
@@ -102,9 +104,32 @@ input::placeholder{
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.3);
     cursor: pointer;
+    position: relative;
+    overflow: hidden;
 }
 
-.btn:hover{
-    filter: brightness(0.9);
+.btn span{
+    color: var(--btn-textcolor);
+    position: relative;
+    z-index: 1;
+
+}
+
+.btn::before{
+    content: "";
+    background-color: var(--btn-hover);
+    width: 0;
+    height: 0;
+    position: absolute;
+    left: var(--xPos);
+    top: var(--yPos);
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    transition: width 0.5s, height 0.5s;
+}
+
+.btn:hover:before{
+    width: 840px;
+    height: 840px;
 }
 
